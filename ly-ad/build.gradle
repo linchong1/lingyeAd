@@ -1,0 +1,95 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.0"
+
+    defaultConfig {
+        minSdkVersion 24
+        targetSdkVersion 30
+        versionCode 30002
+        versionName "3.0.2"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'//使用视频内容组件需要引入recyclerview
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    implementation 'commons-codec:commons-codec:1.15'
+    implementation 'com.squareup.okhttp3:okhttp:3.12.0'
+    implementation 'com.google.protobuf:protobuf-java:4.27.2'
+
+    //穿山甲
+    implementation(name: 'open_ad_sdk_6.3.1.4', ext: 'aar')
+    //快手
+    implementation(name: 'kssdk-ad-3.3.67.1-publishRelease-f8235fdefc', ext: 'aar')
+    //优量汇
+    implementation(name: 'GDTSDK.unionNormal.4.600.1470', ext: 'aar')
+    //sigmob
+    implementation(name: 'wind-common-1.7.1', ext: 'aar')
+    implementation(name: 'wind-sdk-4.19.4', ext: 'aar')
+    //建议去移动安全联盟去集成最新版oaid的sdk 网址：https://www.msa-alliance.cn
+    implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
+    //聚合
+    implementation(name: 'mobileAd-3.0.3', ext: 'aar')
+    //百度
+    implementation(name: 'Baidu_MobAds_SDK-release_v9.371', ext: 'aar')
+    //优推
+    implementation(name: 'adalliance_adn_sdk.3.8.1', ext: 'aar')
+
+    //海量
+    implementation(name: 'hailiang-3.466.10.432', ext: 'aar')
+    //章鱼
+    implementation(name: 'octopus_ad_sdk_1.6.0.6', ext: 'aar')
+    //奇运
+    implementation(name: 'jyadsdk_2.0.2', ext: 'aar')
+
+    //多盟
+    implementation(name: 'domob-ad-sdk-3.4.4', ext: 'aar')
+
+
+    //加集
+    implementation(name: 'jjsdk7.3', ext: 'aar')
+    implementation(name: 'tbs_sdk_thirdapp_v4.3.0.281_44181_sharewithdownloadwithfile_withoutGame_obfs_20220407_152305', ext: 'jar')
+
+    //taku
+    implementation(name: 'anythink_banner_6.4.07', ext: 'aar')
+    implementation(name: 'anythink_china_core_6.4.07', ext: 'aar')
+    implementation(name: 'anythink_core_6.4.07', ext: 'aar')
+    implementation(name: 'anythink_interstitial_6.4.07', ext: 'aar')
+    implementation(name: 'anythink_native_6.4.07', ext: 'aar')
+    implementation(name: 'anythink_rewardvideo_6.4.07', ext: 'aar')
+    implementation(name: 'anythink_splash_6.4.07', ext: 'aar')
+
+    //微信阅读
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:6.6.5.2'
+}
